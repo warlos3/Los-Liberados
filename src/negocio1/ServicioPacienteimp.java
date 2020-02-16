@@ -52,6 +52,14 @@ public class ServicioPacienteimp implements ServicioPaciente {
 		historial=dao.recuperaHistorialMedico(IDPaciente);
 		return historial;
 	}
+	
+	public boolean anadeHistorialMedico(String idPaciente,String fecha, String observaciones) {
+		if(dao.anadeHistorialMedico(idPaciente,fecha,observaciones) == true) {
+			return true;
+		}
+		else
+			return false;
+	}
 
 	@Override
 	public Paciente obtenPaciente(int idPago) {

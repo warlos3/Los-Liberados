@@ -42,15 +42,17 @@ public class CreadorBaseDeDatos {
 			
 			
 			
-			
-			//statement.execute("DROP TABLE consulta");
-			//statement.execute("DROP TABLE Fichamedica");
-			//statement.execute("DROP TABLE Pago");
-			//statement.execute("DROP TABLE Servicio");
-			//statement.execute("DROP TABLE Doctor");
-			//statement.execute("DROP TABLE Paciente");
-			//statement.execute("DROP TABLE Recepcionista");
-			//statement.execute("DROP TABLE Login");
+			/*
+			statement.execute("DROP TABLE consulta");
+			statement.execute("DROP TABLE Fichamedica");
+			statement.execute("DROP TABLE Pago");
+			statement.execute("DROP TABLE Servicio");
+			statement.execute("DROP TABLE Doctor");
+			statement.execute("DROP TABLE Paciente");
+			statement.execute("DROP TABLE Recepcionista");
+			statement.execute("DROP TABLE Login");
+			statement.execute("DROP TABLE historialMedico");
+			*/
 			
 			/*
 			statement.execute("INSERT INTO Login values('456','456','Recepcionista')");
@@ -159,6 +161,14 @@ public class CreadorBaseDeDatos {
 					"CONSTRAINT fkconsultadoctor1 FOREIGN KEY (doctoriddoc) REFERENCES doctor (iddoc),"+
 					"CONSTRAINT fkpacienteidpac FOREIGN KEY (idPaciente) REFERENCES Paciente (idPaciente))"
 					);
+			statement.execute("CREATE TABLE historialMedico("+
+					"idPaciente VARCHAR(45) NOT NULL,"+
+					"fecha VARCHAR(45) NOT NULL,"+ 
+					"observaciones VARCHAR(254) NOT NULL)"
+					);
+					
+					
+			
 			*/
 			
 	        

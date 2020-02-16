@@ -163,5 +163,9 @@ public class DAOCRUZROJAMock implements DAOCruzRoja {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public boolean anadeHistorialMedico(String idPaciente, String fecha, String observaciones) {
+		return false;
+	}
 
 }

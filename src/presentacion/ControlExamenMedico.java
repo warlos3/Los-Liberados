@@ -32,4 +32,12 @@ public class ControlExamenMedico {
 			
 		}
 	}
+	
+	public boolean anadeHistorialMedico(String idPaciente, String fecha, String observaciones) {
+		if(servicioPaciente.anadeHistorialMedico(idPaciente,fecha,observaciones) == true) {
+			return true;
+		}
+		else
+			return false;
+	}
 }
