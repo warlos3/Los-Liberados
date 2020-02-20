@@ -30,7 +30,7 @@ public class VentanaExamenMedico extends JFrame implements ItemListener, ActionL
 	JPanel panel1, panel2, panel3, panel4, panel5, panel6, panel7;
 	JLabel label1, label2, label3, label4, label5, label6, label7, label8, label9, label10;
 	JTextField text1, text2, text3, text4, text5, text6, text7;
-	JButton boton1, boton2, boton3, boton4;
+	JButton boton1, boton2, boton3, boton4, botonHistMedico;
 	JCheckBox check1, check2, check3, check4, check5, check6, check7, check8, check9, check10;
 	JCheckBox check11, check12, check13, check14, check15, check16, check17, check18, check19, check20;
 	JCheckBox check21, check22, check23, check24, check25, check26, check27;
@@ -64,13 +64,14 @@ public class VentanaExamenMedico extends JFrame implements ItemListener, ActionL
 		text3=new JTextField(50);		
 		text4=new JTextField(50);		
 		text5=new JTextField(50);		
-		text6=new JTextField("Escribe aquí las discapacidades físicas");		
-		text7=new JTextField("Escribe aquí notas importantes");		
+		text6=new JTextField(254);		
+		text7=new JTextField(254);		
 
 		boton1=new JButton("Cancelar");
 		boton2=new JButton("Limpiar");
 		boton3=new JButton("Imprimir");
 		boton4=new JButton("Autollenar");
+		botonHistMedico=new JButton("Anadir a Historial Medico");
 		
 		check1=new JCheckBox("M");
 		check2=new JCheckBox("F");
@@ -100,6 +101,7 @@ public class VentanaExamenMedico extends JFrame implements ItemListener, ActionL
 		boton2.addActionListener(this);
 		boton3.addActionListener(this);
 		boton4.addActionListener(this);
+		botonHistMedico.addActionListener(this);
 		
 		check1.addItemListener(this);
 		check2.addItemListener(this);
@@ -161,14 +163,15 @@ public class VentanaExamenMedico extends JFrame implements ItemListener, ActionL
 		panel7.add(boton4);
 		panel7.add(boton1);
 		panel7.add(boton2);
-		panel7.add(boton3,3,3);
+		panel7.add(boton3);
+		panel7.add(botonHistMedico);
 		
 		
 		add(panel1,BorderLayout.NORTH);
 		add(panel6,BorderLayout.CENTER);
 		add(panel7,BorderLayout.SOUTH);
 		
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 	}
 	
@@ -207,6 +210,29 @@ public class VentanaExamenMedico extends JFrame implements ItemListener, ActionL
 			idPaciente = JOptionPane.showInputDialog(null, "Ingresa el ID del paciente");
 			control.ObtenPaciente(idPaciente);
 		}
+		if(e.getSource()==botonHistMedico) {
+			if ( text6.getText().equals("") && text7.getText().equals("") ) {
+				JOptionPane.showMessageDialog(this, "No hay nada para añadir");
+			}
+			else {
+				if (text3.getText().equals("")) {
+					JOptionPane.showMessageDialog(this, "Inserte ID de Paciente");
+				}
+				else {
+					String idPaciente = text3.getText();
+					String fecha = text2.getText();
+					String observaciones = text6.getText() + " " + text7.getText();
+					System.out.println(idPaciente + " " + observaciones);
+					if (control.anadeHistorialMedico(idPaciente,fecha,observaciones) == true ) {
+						JOptionPane.showMessageDialog(this, "Datos añadidos al Historial Medico \n   del paciente correctamente");
+					}
+					else {
+						JOptionPane.showMessageDialog(this, "Ocurrio un error al anadir los datos al HM");
+					}
+				}
+			}
+		}//fin de botonHistMedico
+	
 	}
 	
 	@Override

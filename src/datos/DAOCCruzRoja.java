@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import negocio.dominio.Consulta;
 import negocio.dominio.Doctor;
@@ -368,7 +369,7 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 		try {
 			Statement statement = ManejadorBaseDatos.getConnection().createStatement();
 			//Recibe los resultados
-			ResultSet rs = statement.executeQuery("SELECT Fecha,observaciones FROM consulta WHERE Fichamedica='"+IDPaciente+"' ");
+			ResultSet rs = statement.executeQuery("SELECT Fecha,observaciones FROM historialMedico WHERE idPaciente='"+IDPaciente+"' ");
 			//Guarda cada resultado en un objeto de tipo historial medico
 			while(rs.next()) {
 				hist= new HistorialMedico();
@@ -383,6 +384,18 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 		return historial;
 	}
 
+	public boolean anadeHistorialMedico(String idPaciente, String fecha, String observaciones) {
+		try {
+			Statement statement = ManejadorBaseDatos.getConnection().createStatement();
+			//Anade los datos a la BD
+			statement.execute("INSERT INTO historialMedico VALUES('"+idPaciente+"','"+fecha+"','"+observaciones+"')");
+			
+			return true;
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 	@Override
 	public Paciente recuperaPaciente(int idPago) {
 		// TODO Auto-generated method stub

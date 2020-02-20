@@ -89,4 +89,6 @@ public interface ServicioPaciente {
 
 	public ArrayList<Paciente> recuperaAllPaciente();
 	
+	public boolean anadeHistorialMedico(String idPaciente, String fecha, String observaciones);
+	
 }
