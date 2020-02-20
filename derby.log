@@ -1,6 +1,10 @@
 ----------------------------------------------------------------
-2020-02-18 08:19:47.439 GMT:
- Booting Derby version The Apache Software Foundation - Apache Derby - 10.1.2.1 - (330608): instance c013800d-0170-5761-ba42-0000045bf1f8
+2020-02-20 10:16:44.621 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.1.2.1 - (330608): instance c013800d-0170-6219-851a-00000456a008
 on database directory C:\Users\Zock\git\Los-Liberados\BaseDeDatos 
 
 Database Class Loader started - derby.database.classpath=''
+
+2020-02-20 10:17:36.295 GMT:
+Shutting down instance c013800d-0170-6219-851a-00000456a008
+----------------------------------------------------------------

@@ -6,14 +6,6 @@ import datos.DAOCCruzRoja;
 import negocio1.ServicioEmpleadoimp;
 import negocio1.ServicioPaciente;
 import negocio1.ServicioUsuarioimp;
-import presentacion.ControlEliminaEmpleado;
-import presentacion.ControlNuevoPpaciente;
-import presentacion.ControlPrincipal;
-import presentacion.ControlUsuario;
-import presentacion.Controlagregaempleado;
-import presentacion.ControlFichaMedica;
-import presentacion.ControlVerificacionPago;
-import presentacion.ControlExamenMedico;
 import negocio1.ServicioPacienteimp;
 import negocio1.ServicioReporte;
 import negocio1.ServicioReporteImp;
@@ -64,7 +56,7 @@ public class Aplicacion {
 		
 		crea_y_conecta_modulos();
 		controlPrincipal.inicia();
-		//controlModificaPaciente.inicia();
+		
 	}
 	
 	/**
@@ -92,9 +84,10 @@ public class Aplicacion {
 		controlGeneraEspecialidad = new ControlGeneraEspecialidad(servicioPaciente, servicioConsulta);
 		controlReporteFinanciero = new ControlReporteFinanciero(servicioReporte);
 		controlModificaPaciente = new ControlModificaPaciente(servicioPaciente);
+		controlModificaPaciente =new ControlModificaPaciente(servicioPaciente);
 		controlPrincipal=new ControlPrincipal(control_nuevo_paciente,control_agrega_empleado,
 												control_elima_emp,controlBusquedaPaciente,controlReporteFinanciero,controlUsuario,controlGeneraEspecialidad,
-												controlVerificaPago, controlFichaMedica, controlExamenMedico, controlEliminaPaciente, controlCitas);		
+												controlVerificaPago, controlFichaMedica, controlExamenMedico, controlEliminaPaciente, controlCitas, controlModificaPaciente);		
 		
 	}
 }

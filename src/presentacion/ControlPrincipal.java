@@ -10,7 +10,7 @@ public class ControlPrincipal {
 	private VentanaDoctor ventanaDoc;
 	private VentanaRecepcionista ventanaRec;
 	
-	private  ControlNuevoPpaciente control_nuevo_paciente;
+	private ControlNuevoPpaciente control_nuevo_paciente;
 	private ControlEliminaEmpleado control_elimina_emp;
 	private Controlagregaempleado control_agrega_empleado;
 	private ControlBusquedaPaciente controlBusquedaPaciente;
@@ -22,12 +22,13 @@ public class ControlPrincipal {
 	private ControlExamenMedico controlExamenMedico;
 	private ControlEliminaPaciente controlEliminaPaciente;
 	private ControlCitas controlCitas;
+	private ControlModificaPaciente ControlModificaPaciente;
 	
 	public ControlPrincipal(ControlNuevoPpaciente control_nuevo_paciente,Controlagregaempleado control_agrega_empleado,
 			ControlEliminaEmpleado control_elimina_emp,ControlBusquedaPaciente controlBusquedaPaciente,
 			ControlReporteFinanciero controlReporteFinanciero, ControlUsuario control_Usuario, ControlGeneraEspecialidad controlGeneraEspecialidad,
 			ControlVerificacionPago controlVerificaPago, ControlFichaMedica controlFichaMedica, ControlExamenMedico controlExamenMedico,
-			ControlEliminaPaciente controlEliminaPaciente, ControlCitas controlCitas) {
+			ControlEliminaPaciente controlEliminaPaciente, ControlCitas controlCitas,ControlModificaPaciente ControlModificaPaciente ) {
 		this.control_nuevo_paciente=control_nuevo_paciente;
 		this.control_elimina_emp=control_elimina_emp;
 		this.control_agrega_empleado=control_agrega_empleado;
@@ -40,6 +41,7 @@ public class ControlPrincipal {
 		this.controlExamenMedico=controlExamenMedico;
 		this.controlEliminaPaciente=controlEliminaPaciente;
 		this.controlCitas=controlCitas;
+		this.ControlModificaPaciente=ControlModificaPaciente;
 		
 	}
 	
@@ -115,6 +117,10 @@ public class ControlPrincipal {
 	}
 	public void eliminaPaciente() {
 		controlEliminaPaciente.inicia();
+	}
+	
+	public void modificaPaciente() {
+		ControlModificaPaciente.inicia();
 	}
 	
 	public void muestraCitas() {

@@ -38,6 +38,7 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 	JCheckBox check1,check2;
 	JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9,boton10,boton11,boton12,boton13,boton14;
 	JButton botonElimPaciente;
+	JButton botonModificaPaciente;
 	Date fecha=new Date();
 	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 	
@@ -76,6 +77,7 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		boton3=new JButton("      Citas      ");
 		boton4=new JButton("  Verifica Pago  ");
 		botonElimPaciente=new JButton("Elimina Paciente");
+		botonModificaPaciente=new JButton("Modificar Paciente");
 		
 		boton6=new JButton("  Agrega Empleado  ");
 		boton7=new JButton("  Elimina Empleado  ");
@@ -98,7 +100,8 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		boton13.addActionListener(this);
 		boton14.addActionListener(this);
 		botonElimPaciente.addActionListener(this);
-
+		botonModificaPaciente.addActionListener(this);
+		
 		panel1.setLayout(new GridLayout(1,3));
 		panel1.add(label1);
 		panel1.add(aux);
@@ -111,6 +114,7 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		panel3.add(boton3);
 		panel3.add(boton4);
 		panel3.add(botonElimPaciente);
+		panel3.add(botonModificaPaciente);
 		
 		//panel de empleados
 		panel4.setLayout(new FlowLayout());
@@ -210,6 +214,10 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		}
 		if(e.getSource()==botonElimPaciente) {
 			control.eliminaPaciente();
+		}
+		//Botón para modificar a un paciente, se comunica con su respectivo control
+		if(e.getSource()==botonModificaPaciente) {
+			control.modificaPaciente();
 		}
 		//Boton nuevo empleado que se comunica con su respectivo control
 		if (e.getSource()==boton6) {
