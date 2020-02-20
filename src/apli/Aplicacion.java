@@ -45,6 +45,7 @@ public class Aplicacion {
 	private static ControlExamenMedico controlExamenMedico;
 	private static ControlEliminaPaciente controlEliminaPaciente;
 	private static ControlCitas controlCitas;
+	private static ControlModificaPaciente controlModificaPaciente;
 	
 	private static ServicioEmpleado servicio_empleadoagrega;
 	private static ServicioPaciente servicioPaciente;
@@ -63,6 +64,7 @@ public class Aplicacion {
 		
 		crea_y_conecta_modulos();
 		controlPrincipal.inicia();
+		//controlModificaPaciente.inicia();
 	}
 	
 	/**
@@ -89,6 +91,7 @@ public class Aplicacion {
 		controlBusquedaPaciente = new ControlBusquedaPaciente(servicioPaciente);
 		controlGeneraEspecialidad = new ControlGeneraEspecialidad(servicioPaciente, servicioConsulta);
 		controlReporteFinanciero = new ControlReporteFinanciero(servicioReporte);
+		controlModificaPaciente = new ControlModificaPaciente(servicioPaciente);
 		controlPrincipal=new ControlPrincipal(control_nuevo_paciente,control_agrega_empleado,
 												control_elima_emp,controlBusquedaPaciente,controlReporteFinanciero,controlUsuario,controlGeneraEspecialidad,
 												controlVerificaPago, controlFichaMedica, controlExamenMedico, controlEliminaPaciente, controlCitas);		

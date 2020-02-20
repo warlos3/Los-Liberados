@@ -148,4 +148,13 @@ public class ServicioPacienteimp implements ServicioPaciente {
 		return dao.recuperaAllPaciente();
 	}
 	
+	public boolean nuevoPaciente2(Paciente p) {
+		
+		if(dao.crea_paciente(p))
+			 return true;
+			else
+				return false;
+
+	}
+	
 }

@@ -420,7 +420,8 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 			//Se conecta a la base de datos
 			Statement statement = ManejadorBaseDatos.getConnection().createStatement();
 			//Recupera la informacion del paciente que se encuentra en la base de datos
-			ResultSet rs = statement.executeQuery("SELECT idPaciente, edad, nombre, apellido, sexo FROM Paciente where idPaciente='"+idPaciente+"'");
+			ResultSet rs = statement.executeQuery("SELECT idPaciente, edad, nombre, apellido, "
+					+ "sexo, telefono, direccion, email, fechanacimiento, curp FROM Paciente where idPaciente='"+idPaciente+"'");
 			
 			//Va almacenando la informacion obtenida de la base de datos
 			if(rs.next()) {
@@ -430,6 +431,11 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 				paciente.setNombre(rs.getString("nombre"));
 				paciente.setApellido(rs.getString("apellido"));
 				paciente.setSexo(rs.getString("sexo"));
+				paciente.setTelefono(rs.getString("telefono"));
+				paciente.setDireccion(rs.getString("direccion"));
+				paciente.setEmail(rs.getString("email"));
+				paciente.setFecha_nacimiento(rs.getString("fechanacimiento"));
+				paciente.setCURP(rs.getString("curp"));
 			}
 			
 			return paciente;
