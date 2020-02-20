@@ -1,3 +1,4 @@
+
 package presentacion;
 
 import java.awt.BorderLayout;
@@ -36,7 +37,7 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 	JLabel label1,label3,label4,label5,img;
 	JTextField text1,text2,text3,text4,text5,text6,text7,text8;
 	JCheckBox check1,check2;
-	JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9,boton10,boton11,boton12,boton13,boton14;
+	JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton9,boton10,boton11,boton12,boton13,boton14, botonHorario;
 	JButton botonElimPaciente;
 	Date fecha=new Date();
 	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -76,10 +77,10 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		boton3=new JButton("      Citas      ");
 		boton4=new JButton("  Verifica Pago  ");
 		botonElimPaciente=new JButton("Elimina Paciente");
-		
+	
 		boton6=new JButton("  Agrega Empleado  ");
 		boton7=new JButton("  Elimina Empleado  ");
-		boton8=new JButton("Actualiza Empleado");
+		botonHorario=new JButton("          Horarios           ");
 		
 		boton9=new JButton("Reporte Financiero");
 		boton13=new JButton("Regresar");
@@ -90,7 +91,6 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		boton4.addActionListener(this);
 		boton6.addActionListener(this);
 		boton7.addActionListener(this);
-		boton8.addActionListener(this);
 		boton9.addActionListener(this);
 		boton10.addActionListener(this);
 		boton11.addActionListener(this);
@@ -98,6 +98,7 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		boton13.addActionListener(this);
 		boton14.addActionListener(this);
 		botonElimPaciente.addActionListener(this);
+		botonHorario.addActionListener(this);
 
 		panel1.setLayout(new GridLayout(1,3));
 		panel1.add(label1);
@@ -112,11 +113,12 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		panel3.add(boton4);
 		panel3.add(botonElimPaciente);
 		
+		
 		//panel de empleados
 		panel4.setLayout(new FlowLayout());
 		panel4.add(boton6);
 		panel4.add(boton7);
-		panel4.add(boton8);
+		panel4.add(botonHorario);
 		
 		//panel de finansas
 		panel5.setLayout(new FlowLayout());
@@ -210,6 +212,9 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		}
 		if(e.getSource()==botonElimPaciente) {
 			control.eliminaPaciente();
+		}
+		if(e.getSource()==botonHorario) {
+			control.buscaHorario();
 		}
 		//Boton nuevo empleado que se comunica con su respectivo control
 		if (e.getSource()==boton6) {

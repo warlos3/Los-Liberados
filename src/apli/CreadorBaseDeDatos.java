@@ -57,7 +57,7 @@ public class CreadorBaseDeDatos {
 			statement.execute("INSERT INTO Login values('123','123','Doctor')");
 			statement.execute("INSERT INTO doctor values ('asdsa','luis','feranndo','2019-05-30',23,'hola','qw','er','M','dsd','asdasd','marutio')");
 			statement.execute("INSERT INTO doctor values ('12345','fernando','feranndo','2019-05-30',23,'hola','qw','er','M','dsd','asdasd','marutio')");
-			statement.execute("INSERT INTO Recepcionista values ('987','raul','feranndo','2019-05-30',23,'hola','qw','er','M','dsd','asdasd')");
+			statement.execute("INSERT INTO Recepcionista values ('987','raul','feranndo','2019-05-30',23,'hola','qw','er','M','dsd','12:00-19:00','asdasd')");
 			statement.execute("INSERT INTO Servicio values (01,'Consulta General',60)");
 			statement.execute("INSERT INTO Servicio values (02,'Inyeccion',30)");
 			statement.execute("INSERT INTO Servicio values (03,'Ortopedista',1)");

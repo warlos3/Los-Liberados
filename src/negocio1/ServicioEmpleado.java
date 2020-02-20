@@ -10,6 +10,7 @@ public interface ServicioEmpleado {
 	
 	public boolean EliminaEmpleado(String ID);
 	
+	
 	public Empleado recupera_empleado(Empleado empleado);	
 	
 	public ArrayList<Doctor> recuperaAllempleadosDoc();
