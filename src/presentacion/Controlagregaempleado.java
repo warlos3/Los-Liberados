@@ -1,3 +1,7 @@
+//Control de la historia de agregar al empleado //
+// Creador Joselyn Ramirez Cordero //
+// Equipo : Los Liberados//
+
 package presentacion;
 
 import negocio1.ServicioEmpleado;
