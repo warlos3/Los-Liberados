@@ -1,3 +1,10 @@
+/* Ventana de agregar empleado creado 
+ * Creador Joselyn Ramirez 
+ * Equipo : Los liberados 
+ */
+
+
+
 package presentacion;
 
 import java.awt.BorderLayout;
@@ -21,6 +28,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class Ventana_agrega_empleado extends JFrame implements ItemListener, ActionListener {
+
 		
 		JPanel panel1,panel2,panel3,panel4,panel5,panel6, panelPrincipal, panelDoc, panelRecep, panel7;
 		JLabel label1,label2,label3,label4,label5,label6,label7,label8,label9,label10,label11, label12,label13,label14,label15;
