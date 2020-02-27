@@ -22,12 +22,14 @@ public class ControlPrincipal {
 	private ControlExamenMedico controlExamenMedico;
 	private ControlEliminaPaciente controlEliminaPaciente;
 	private ControlCitas controlCitas;
+	private ControlBuquedaHorarios controlBusquedaHorarios;
 	
 	public ControlPrincipal(ControlNuevoPpaciente control_nuevo_paciente,Controlagregaempleado control_agrega_empleado,
 			ControlEliminaEmpleado control_elimina_emp,ControlBusquedaPaciente controlBusquedaPaciente,
 			ControlReporteFinanciero controlReporteFinanciero, ControlUsuario control_Usuario, ControlGeneraEspecialidad controlGeneraEspecialidad,
 			ControlVerificacionPago controlVerificaPago, ControlFichaMedica controlFichaMedica, ControlExamenMedico controlExamenMedico,
-			ControlEliminaPaciente controlEliminaPaciente, ControlCitas controlCitas) {
+			ControlEliminaPaciente controlEliminaPaciente, ControlCitas controlCitas, ControlBuquedaHorarios controlBusquedaHorarios) {
+		
 		this.control_nuevo_paciente=control_nuevo_paciente;
 		this.control_elimina_emp=control_elimina_emp;
 		this.control_agrega_empleado=control_agrega_empleado;
@@ -40,6 +42,7 @@ public class ControlPrincipal {
 		this.controlExamenMedico=controlExamenMedico;
 		this.controlEliminaPaciente=controlEliminaPaciente;
 		this.controlCitas=controlCitas;
+		this.controlBusquedaHorarios= controlBusquedaHorarios;
 		
 	}
 	
@@ -81,6 +84,10 @@ public class ControlPrincipal {
 	public void eliminaEmpleado() {
 		control_elimina_emp.inicia();
 	}
+    
+	public void BusquedaHorario() {
+		controlBusquedaHorarios.inicia();
+	}
 
 	/**
 	 * Inicia la historia de usuario de busqueda de paciente
@@ -119,5 +126,8 @@ public class ControlPrincipal {
 	
 	public void muestraCitas() {
 		controlCitas.inicia();
+	}
+	public void buscaHorario() {
+		controlBusquedaHorarios.inicia();
 	}
 }

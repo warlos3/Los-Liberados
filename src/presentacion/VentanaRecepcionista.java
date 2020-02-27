@@ -79,7 +79,7 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		
 		boton6=new JButton("  Agrega Empleado  ");
 		boton7=new JButton("  Elimina Empleado  ");
-		boton8=new JButton("Actualiza Empleado");
+		boton8=new JButton("          Horarios            ");
 		
 		boton9=new JButton("Reporte Financiero");
 		boton13=new JButton("Regresar");
@@ -219,6 +219,9 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		//Boton elimina empleado que se comunica con su respectivo control
 		if(e.getSource()==boton7) {
 			control.eliminaEmpleado();
+		}
+		if(e.getSource()==boton8) {
+			control.buscaHorario();
 		}
 		
 		//Boton reporte financiero que se comunica con su respectivo control

@@ -218,7 +218,7 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 			Statement statement = ManejadorBaseDatos.getConnection().createStatement();
 
 			// Recibe los resutados
-			ResultSet rs = statement.executeQuery("SELECT iddoc,nombre,apellido,cedulaprofesional FROM Doctor");
+			ResultSet rs = statement.executeQuery("SELECT iddoc,nombre,apellido,cedulaprofesional,horario FROM Doctor");
 
 			
 			while(rs.next())
@@ -229,6 +229,7 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 				emp.setNombre(rs.getString("nombre"));
 				emp.setApellido(rs.getString("apellido"));
 				emp.setCedulaProfesional(rs.getString("cedulaprofesional"));
+				emp.setHorario(rs.getString("horario"));
 				empleado.add(emp);
 				
 				
@@ -253,7 +254,7 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 			Statement statement = ManejadorBaseDatos.getConnection().createStatement();
 
 			// Recibe los resutados
-			ResultSet rs = statement.executeQuery("SELECT idrecep,nombre,apellido FROM Recepcionista");
+			ResultSet rs = statement.executeQuery("SELECT idrecep,nombre,apellido,horario FROM Recepcionista");
 
 			
 			while(rs.next())
@@ -263,6 +264,7 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 				emp.setId_empleado(rs.getString("idrecep"));
 				emp.setNombre(rs.getString("nombre"));
 				emp.setApellido(rs.getString("apellido"));
+				emp.setHorario(rs.getString("horario"));
 				empleado.add(emp);
 				
 				
