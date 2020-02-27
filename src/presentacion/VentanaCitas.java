@@ -103,7 +103,7 @@ public class VentanaCitas extends JFrame implements ActionListener , ItemListene
 			setVisible(false);
 		}	
 		if(e.getSource()==boton2) {
-			boton3 = new JButton("Regresar");
+			boton3 = new JButton("Cancelar");
 			boton3.addActionListener(this);
 			boton4 = new JButton("Buscar");
 			boton4.addActionListener(this);
@@ -128,16 +128,15 @@ public class VentanaCitas extends JFrame implements ActionListener , ItemListene
 			setVisible(true);
 		}
 		if(e.getSource()==boton3) {
-			//setVisible(false);
+			panel3.setVisible(false);
 			panel4.setVisible(false);
 			panel5.setVisible(false);
-			panel6.setVisible(false);
-			panel7.setVisible(false);
 			panel1.setVisible(true);
 			panel2.setVisible(true);
 			panel3.setVisible(true);
+			add(panel1,BorderLayout.NORTH);
+			add(panel2,BorderLayout.CENTER);
 			add(panel3,BorderLayout.SOUTH);
-			setVisible(true);
 		}
 		if(e.getSource()==boton4) {
 			String idPaciente;

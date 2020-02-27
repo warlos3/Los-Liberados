@@ -167,8 +167,6 @@ public class CreadorBaseDeDatos {
 					"observaciones VARCHAR(254) NOT NULL)"
 					);
 					
-					
-			
 			*/
 			
 	        
