@@ -75,5 +75,8 @@ public interface DAOCruzRoja {
 	public Consulta recuperaCita(String idPaciente);
 	
 	public boolean anadeHistorialMedico(String idPaciente, String fecha, String observaciones);
+	
+	public ArrayList<Consulta> recuperaAllServicios();
+	
 
 }

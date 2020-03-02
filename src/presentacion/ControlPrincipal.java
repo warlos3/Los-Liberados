@@ -23,12 +23,14 @@ public class ControlPrincipal {
 	private ControlEliminaPaciente controlEliminaPaciente;
 	private ControlCitas controlCitas;
 	private ControlBuquedaHorarios controlBusquedaHorarios;
+	private ControlMuestraServicios controlMuestraServicios;
 	
 	public ControlPrincipal(ControlNuevoPpaciente control_nuevo_paciente,Controlagregaempleado control_agrega_empleado,
 			ControlEliminaEmpleado control_elimina_emp,ControlBusquedaPaciente controlBusquedaPaciente,
 			ControlReporteFinanciero controlReporteFinanciero, ControlUsuario control_Usuario, ControlGeneraEspecialidad controlGeneraEspecialidad,
 			ControlVerificacionPago controlVerificaPago, ControlFichaMedica controlFichaMedica, ControlExamenMedico controlExamenMedico,
-			ControlEliminaPaciente controlEliminaPaciente, ControlCitas controlCitas, ControlBuquedaHorarios controlBusquedaHorarios) {
+			ControlEliminaPaciente controlEliminaPaciente, ControlCitas controlCitas, ControlBuquedaHorarios controlBusquedaHorarios,
+			ControlMuestraServicios controlMuestraServicios) {
 		
 		this.control_nuevo_paciente=control_nuevo_paciente;
 		this.control_elimina_emp=control_elimina_emp;
@@ -42,8 +44,8 @@ public class ControlPrincipal {
 		this.controlExamenMedico=controlExamenMedico;
 		this.controlEliminaPaciente=controlEliminaPaciente;
 		this.controlCitas=controlCitas;
-		this.controlBusquedaHorarios= controlBusquedaHorarios;
-		
+		this.controlBusquedaHorarios = controlBusquedaHorarios;
+		this.controlMuestraServicios = controlMuestraServicios;
 	}
 	
 	/*
@@ -129,5 +131,9 @@ public class ControlPrincipal {
 	}
 	public void buscaHorario() {
 		controlBusquedaHorarios.inicia();
+	}
+	
+	public void muestraServicios() {
+		controlMuestraServicios.inicia();
 	}
 }

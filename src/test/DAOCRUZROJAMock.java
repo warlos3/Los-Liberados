@@ -167,5 +167,11 @@ public class DAOCRUZROJAMock implements DAOCruzRoja {
 	public boolean anadeHistorialMedico(String idPaciente, String fecha, String observaciones) {
 		return false;
 	}
+	
+	@Override
+	public ArrayList<Consulta> recuperaAllServicios() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

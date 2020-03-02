@@ -16,4 +16,6 @@ public interface ServicioConsulta {
 	
 	public Paciente recuperaPaciente(String idCita);
 		
+	public ArrayList<Consulta> recuperaAllServicios();
+	
 }

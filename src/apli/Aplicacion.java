@@ -46,7 +46,7 @@ public class Aplicacion {
 	private static ControlEliminaPaciente controlEliminaPaciente;
 	private static ControlCitas controlCitas;
 	private static ControlBuquedaHorarios controlBusquedaHorarios;
-	
+	private static ControlMuestraServicios controlMuestraServicios;
 
 	private static ServicioEmpleado servicio_empleadoagrega;
 	private static ServicioPaciente servicioPaciente;
@@ -92,10 +92,12 @@ public class Aplicacion {
 		controlGeneraEspecialidad = new ControlGeneraEspecialidad(servicioPaciente, servicioConsulta);
 		controlReporteFinanciero = new ControlReporteFinanciero(servicioReporte);
 		controlBusquedaHorarios= new ControlBuquedaHorarios(servicio_empleado);
+		controlMuestraServicios = new ControlMuestraServicios(servicioConsulta);
 		
 		controlPrincipal=new ControlPrincipal(control_nuevo_paciente,control_agrega_empleado,
 												control_elima_emp,controlBusquedaPaciente,controlReporteFinanciero,controlUsuario,controlGeneraEspecialidad,
-												controlVerificaPago, controlFichaMedica, controlExamenMedico, controlEliminaPaciente, controlCitas, controlBusquedaHorarios);		
+												controlVerificaPago, controlFichaMedica, controlExamenMedico, controlEliminaPaciente, controlCitas, 
+												controlBusquedaHorarios,controlMuestraServicios);		
 		
 	}
 }

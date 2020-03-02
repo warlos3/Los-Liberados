@@ -43,4 +43,7 @@ public class ServicioConsultaimp implements ServicioConsulta{
 		return dao.recuperaPaciente(idPaciente);
 	}
 
+	public ArrayList<Consulta> recuperaAllServicios(){
+		return dao.recuperaAllServicios();
+	}
 }
