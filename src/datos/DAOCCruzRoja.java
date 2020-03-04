@@ -570,6 +570,20 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 		return null;
 	}
 
-	
+	public boolean updateContraseña(String idUsuario, String contra) {
+		try {
+			// Se conecta a la BD
+			Statement statement = ManejadorBaseDatos.getConnection().createStatement();
+					
+			// Ejecuta la instruccion
+			statement.execute("UPDATE Login SET contrasena = '"+contra+"' WHERE usuario = '"+idUsuario+"'");
+			return true;
+			
+		} catch (SQLException e) {
+			//Cacha excepcion
+			e.printStackTrace();
+			return false;
+		}
+	}
 
 }

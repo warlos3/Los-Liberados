@@ -74,4 +74,6 @@ public interface DAOCruzRoja {
 	
 	public Consulta recuperaCita(String idPaciente);
 
+	public boolean updateContraseña(String idUsuario, String contra);
+	
 }

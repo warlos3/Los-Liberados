@@ -1,7 +1,7 @@
 package presentacion;
 
 import datos.ManejadorBaseDatos;
-
+import negocio1.ServicioUsuario;
 import negocio1.ServicioUsuarioimp;
 
 public class ControlPrincipal {
@@ -9,13 +9,14 @@ public class ControlPrincipal {
 	private VentanaPrincipal ventana;
 	private VentanaDoctor ventanaDoc;
 	private VentanaRecepcionista ventanaRec;
+	private VentanaCambiarContra ventanaCambioContra;
 	
-	private  ControlNuevoPpaciente control_nuevo_paciente;
+	private ControlNuevoPpaciente control_nuevo_paciente;
 	private ControlEliminaEmpleado control_elimina_emp;
 	private Controlagregaempleado control_agrega_empleado;
 	private ControlBusquedaPaciente controlBusquedaPaciente;
 	private ControlReporteFinanciero controlReporteFinanciero;
-	private ControlUsuario control_Usuario;
+	private ControlUsuario controlUsuario;
 	private ControlGeneraEspecialidad controlGeneraEspecialidad;
 	private ControlVerificacionPago controlVerificaPago;
 	private ControlFichaMedica controlFichaMedica;
@@ -25,7 +26,7 @@ public class ControlPrincipal {
 	
 	public ControlPrincipal(ControlNuevoPpaciente control_nuevo_paciente,Controlagregaempleado control_agrega_empleado,
 			ControlEliminaEmpleado control_elimina_emp,ControlBusquedaPaciente controlBusquedaPaciente,
-			ControlReporteFinanciero controlReporteFinanciero, ControlUsuario control_Usuario, ControlGeneraEspecialidad controlGeneraEspecialidad,
+			ControlReporteFinanciero controlReporteFinanciero, ControlUsuario controlUsuario, ControlGeneraEspecialidad controlGeneraEspecialidad,
 			ControlVerificacionPago controlVerificaPago, ControlFichaMedica controlFichaMedica, ControlExamenMedico controlExamenMedico,
 			ControlEliminaPaciente controlEliminaPaciente, ControlCitas controlCitas) {
 		this.control_nuevo_paciente=control_nuevo_paciente;
@@ -34,7 +35,7 @@ public class ControlPrincipal {
 		this.controlBusquedaPaciente=controlBusquedaPaciente;
 		this.controlGeneraEspecialidad=controlGeneraEspecialidad;
 		this.controlReporteFinanciero=controlReporteFinanciero;
-		this.control_Usuario=control_Usuario;
+		this.controlUsuario=controlUsuario;
 		this.controlVerificaPago=controlVerificaPago;
 		this.controlFichaMedica=controlFichaMedica;
 		this.controlExamenMedico=controlExamenMedico;
@@ -54,7 +55,6 @@ public class ControlPrincipal {
 	public void cerrarsecion() {
 		ventana.abre();
 	}
-	
 	/*
 	 * Inicia la historia de usuario de nuevo paciente
 	 */
@@ -68,8 +68,22 @@ public class ControlPrincipal {
 		ventanaRec.abre();
 	}
 	
+	public void muestraCambiarContra() {
+		ventanaCambioContra=new VentanaCambiarContra(this);
+		ventanaCambioContra.abre();
+	}
+	
+	public void cambiarContra(String idUsuario,String contra) {
+		 if(controlUsuario.cambiaContra(idUsuario, contra)) {
+			 ventanaCambioContra.exito();
+		 }
+		 else {
+			 ventanaCambioContra.error();
+		 }
+	}	
+	
 	public String login(String nombre, String contra) {
-		return control_Usuario.verificaUsuario(nombre, contra);
+		return controlUsuario.verificaUsuario(nombre, contra);
 	}
 	
 	public  void nuevo_paciente() {
@@ -98,12 +112,11 @@ public class ControlPrincipal {
 	
 	public void termina() {
 		ManejadorBaseDatos.shutdown();
-		
+		System.exit(0);
 	}
 
 	public void generaPase() {
 		controlGeneraEspecialidad.inicia();
-		
 	}
 	
 	public void verificaPago() {
@@ -113,6 +126,7 @@ public class ControlPrincipal {
 	public void generaExamenMedico() {
 		controlExamenMedico.inicia();
 	}
+	
 	public void eliminaPaciente() {
 		controlEliminaPaciente.inicia();
 	}
@@ -120,4 +134,5 @@ public class ControlPrincipal {
 	public void muestraCitas() {
 		controlCitas.inicia();
 	}
+	
 }

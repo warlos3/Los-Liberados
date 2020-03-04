@@ -27,7 +27,10 @@ public class ServicioUsuarioimp implements ServicioUsuario {
 	
 	public void recuperaContra(String nombre) {
 		// TODO Auto-generated method stub
-
+	}
+	
+	public boolean cambiarContra(String idUsuario, String contra) {
+		return dao.updateContraseña(idUsuario, contra);
 	}
 	
 	

@@ -13,4 +13,8 @@ public class ControlUsuario {
 	public String verificaUsuario(String nombre, String contra) {
 		return servicioUsuario.verificaUsuario(nombre, contra);
 	}
+	
+	public boolean cambiaContra(String idUsuario, String contra) {
+		return servicioUsuario.cambiarContra(idUsuario, contra);
+	}
 }

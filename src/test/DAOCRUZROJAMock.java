@@ -164,4 +164,10 @@ public class DAOCRUZROJAMock implements DAOCruzRoja {
 		return null;
 	}
 
+	@Override
+	public boolean updateContraseña(String idUsuario, String contra) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

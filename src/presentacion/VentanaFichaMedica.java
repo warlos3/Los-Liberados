@@ -45,7 +45,6 @@ public class VentanaFichaMedica extends JFrame implements ItemListener, ActionLi
 		panel3=new JPanel();
 		
 		label1=new JLabel("Ficha Médica");
-		
 		label3=new JLabel("ID paciente");
 		label4=new JLabel("Edad");
 		label5=new JLabel("Nombre");

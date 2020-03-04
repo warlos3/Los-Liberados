@@ -12,10 +12,10 @@ import java.awt.*;
 public class VentanaPrincipal extends JFrame implements ActionListener {
 	
 	private ControlPrincipal control;
-	JPanel panel1, panel2, panel3,aux;
+	JPanel panel1, panel2, panel3, aux;
 	JLabel label1, label2, label3, img;
 	JTextField text1,text2;
-	JButton botonInicia, botonLimpia, botonSalir;
+	JButton botonInicia, botonLimpia, botonSalir, botonCambioContra;
 	Choice lista;
 	JPasswordField pasw;
 	Date fecha=new Date();
@@ -49,6 +49,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		botonInicia=new JButton("Iniciar Sesion");		
 		botonLimpia=new JButton("Limpiar");
 		botonSalir=new JButton("Salir");
+		botonCambioContra=new JButton("Cambiar contrasena");
 		
 		text1=new JTextField(50);
 		pasw=new JPasswordField(50);
@@ -56,6 +57,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		botonInicia.addActionListener(this);
 		botonLimpia.addActionListener(this);
 		botonSalir.addActionListener(this);
+		botonCambioContra.addActionListener(this);
 		
 		lista = new Choice();
 		lista.add("Doctor");
@@ -71,10 +73,10 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		panel2.add(text1);
 		panel2.add(label3);
 		panel2.add(pasw);
-		//panel2.add(lista);
+		panel2.add(botonCambioContra);
+		
 		
 		//panel3.setLayout(new GridLayout(1,3));
-		
 		panel3.add(botonLimpia);
 		panel3.add(botonInicia);
 		panel3.add(botonSalir);
@@ -124,10 +126,13 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		}
 		if(e.getSource()==botonSalir) {
 			control.termina();
+			setVisible(false);
 			setDefaultCloseOperation(EXIT_ON_CLOSE);
 		}
-
-
+		if(e.getSource()==botonCambioContra) {
+			setVisible(false);
+			control.muestraCambiarContra();
+		}
 	}
 	
 	
