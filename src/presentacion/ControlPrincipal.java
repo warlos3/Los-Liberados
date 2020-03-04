@@ -74,12 +74,12 @@ public class ControlPrincipal {
 	}
 	
 	public void cambiarContra(String idUsuario,String contra) {
-		 if(controlUsuario.cambiaContra(idUsuario, contra)) {
-			 ventanaCambioContra.exito();
-		 }
-		 else {
-			 ventanaCambioContra.error();
-		 }
+		if(controlUsuario.cambiaContra(idUsuario, contra)) {
+			ventanaCambioContra.exito();
+		}
+		else {
+			ventanaCambioContra.error();
+		}
 	}	
 	
 	public String login(String nombre, String contra) {

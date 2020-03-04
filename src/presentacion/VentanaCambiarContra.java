@@ -1,4 +1,11 @@
 package presentacion;
+/******************************************************************/ 
+/* Clase de la ventana para cambiar la contraseña
+/* Autor: Ramirez Ortega Omar Daniel  
+/* Descripción: Es la ventana que se mostrara para el cambio de contraseña,
+ * el usuario podra ingresar su nueva contraseña para poder acceder al login
+ * del programa.
+/******************************************************************/ 
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,15 +14,24 @@ import java.awt.event.ItemEvent;
 import javax.swing.*;
 import java.awt.*;
 
+/******************************************************************/ 
+/* Contenido del Listado:
+/* public void abre()
+/* public void exito()
+/* public void error()
+/******************************************************************/ 
+
 public class VentanaCambiarContra extends JFrame implements ActionListener {
 	
 	private ControlPrincipal control;
+	//control nos servira para crear la conexion con el control principal
 	
 	JPanel panel1, panel2, panel3;
 	JLabel label1, label2, label3, label4;
 	JTextField text1, text2, text3;
 	JButton botonCancelar, botonCambiar;
 	
+	//Constructor de la clase VentanaCambiarContra y la que crea la ventana
 	public VentanaCambiarContra(ControlPrincipal control) throws HeadlessException {
 		super("Cambiar contraseña");
 		this.control = control;
@@ -81,14 +97,27 @@ public class VentanaCambiarContra extends JFrame implements ActionListener {
 		}
 	}
 	
+	/***************************************************************
+	 * Esta funcion hace que la ventana aparezca en la pantalla cuando
+	 * el control principal la llama
+	 **************************************************************/
 	public void abre() {
 		setVisible(true);
 	}
 	
+	/***************************************************************
+	 * Esta funcion hace que aparezca una ventana con un mensaje de que 
+	 * la contraseña se cambio correctamente y aparece la pantalla de login
+	 **************************************************************/
 	public void exito() {
 		JOptionPane.showMessageDialog(this, "Cambio de contraseña correcto");
+		control.inicia();
 	}
 	
+	/***************************************************************
+	 * Esta funcion hace que aparezca una ventana con un mensaje de error
+	 * de que el usuario no se encontro o que hubo un error en la contraseña
+	 **************************************************************/
 	public void error() {
 		JOptionPane.showMessageDialog(this, "Usuario no encontrado");
 	}

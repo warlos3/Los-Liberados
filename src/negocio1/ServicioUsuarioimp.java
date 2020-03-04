@@ -24,15 +24,18 @@ public class ServicioUsuarioimp implements ServicioUsuario {
 		return dao.verificaUsuario(nombre,contra);
 	}
 
-	
 	public void recuperaContra(String nombre) {
 		// TODO Auto-generated method stub
 	}
 	
+	/***************************************************************
+	 * Esta funcion recibe el id del usuario y la nueva contraseña que 
+	 * eligio el usuario que se encuentra registrado en la base de datos
+	 * Si la contraseña se cambio con exito regresa True, si no se pudo
+	 * realizar los cambios regresa False
+	 **************************************************************/
 	public boolean cambiarContra(String idUsuario, String contra) {
 		return dao.updateContraseña(idUsuario, contra);
 	}
 	
-	
-
 }
