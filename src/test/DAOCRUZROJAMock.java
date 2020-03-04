@@ -1,12 +1,18 @@
 package test;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 
 import datos.DAOCruzRoja;
+import datos.ManejadorBaseDatos;
 import negocio.dominio.Consulta;
 import negocio.dominio.Doctor;
 import negocio.dominio.Empleado;
@@ -116,10 +122,29 @@ public class DAOCRUZROJAMock implements DAOCruzRoja {
 		return false;
 	}
 
-	@Override
+	@Override /*metodo parasaber si la especialidad existe en la base de datos*/
 	public boolean recuperaEspecialidad(String especialidad) {
-		// TODO Auto-generated method stub
-		return false;
+		int bandera = 1; //bandera, es 0 si existe la especialidad, es 1 si no.
+		try{
+			Statement statement = ManejadorBaseDatos.getConnection().createStatement();
+			// Recibe los resutados
+			ResultSet rs = statement.executeQuery("SELECT tipo FROM Servicio WHERE tipo= '"+especialidad+"'");
+			
+			while(rs.next()) {
+				if (rs.getString("tipo") == "NULL") { //si la especialidad no se encuentra
+					bandera=1;
+				}
+				else {
+					bandera=0;
+				}
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}	
+		if(bandera==0)
+			return true;
+		else
+			return false;
 	}
 
 	@Override
