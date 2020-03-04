@@ -2,7 +2,7 @@
  * Programa :Es el Control de Busqueda de horarios de los empledos "HU-05"
  * Autor : Ramirez Cordero Joselyn
  * Fecha: 02/03/ 2020
- * Descripción: Es la conexion entre el control yyel servicio, para moder manejar 
+ * Descripción: Es la conexion entre el controlBusquedaHorarios y el servicioBusquedaHorarios, para moder manejar 
  *              los datos correspondientes.
  *              
  */
@@ -10,7 +10,7 @@
 /* Contenido de listado
  * 
  * Metodos y clases 
- * Clase de Control Biusqueda Horarios
+ * Clase de Control Busqueda Horarios
  * Control Busqueda Horarios(ServicioEmpleado servicioempleado)
  * public void inicia() //  Inicia el la historia de usuario
  * public ArrayList<Doctor> recuperaAllEmpleadosDoc() // Este módulo recupera una lista de lo empleados
@@ -44,7 +44,7 @@ public class ControlBuquedaHorarios {
 		 this.servicioempleado=servicioempleado;
 			}
 	
-	 /*
+	/*
 	  * Inicia el evento de la Busqueda de los horarios de los empleados
 	  */
 	 public void inicia() { 
