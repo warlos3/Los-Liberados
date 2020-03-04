@@ -2,8 +2,8 @@
 
 /* Programa: Cruz Roja */ 
 
-
 /* Autor: Contreras Vazquez Carlos */ 
+
 /* Descripción: Este control es el que se encarga de comunicarse con la ventanaMuestraServicios
  * 				y con el servicioConsulta. Es decir, se encarga de controlar los llamados de los
  * 				métodos que la ventana ocupa y comunicarse al servicio para realizarlos. 
