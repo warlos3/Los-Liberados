@@ -1,3 +1,31 @@
+/******************************************************************/ 
+/* INFORMACION */
+
+
+
+/* Programa: Cruz Roja */ 
+
+
+/* Autor:  Todo el equipo de desarrollo */ 
+
+/* Descripción: Este servicio es el encargado de todo lo relacionado con el empleado. Obtiene información
+ * 				del empleado como, nombre, ID de empleado, telefono, correo, direccion, etc.
+ * 				El servicioEmpleado se comunica con el DAOCruzRoja, para obtener datos de los empleados 
+ * 				mediante los métodos utilizados aquí.*/ 
+
+/******************************************************************/
+
+/* Contenido del Listado:
+ * 		- public boolean EliminaEmpleado(String ID)
+ * 		- public String generaidEmp(String nombre,int edad,String sexo,String telefono)
+ * 		- public boolean agrega_empleadoDoc(String nombre, String apellido, String telefono, String direccion, String email, int edad,String fecha_ingreso, String sexo, String horario, String id_empleado, String cedulaProfesional, String especialidad)
+ * 		- public boolean agrega_empleadoRecep(String nombre, String apellido, String telefono, String direccion, String email, int edad,String fecha_ingreso, String sexo, String horario, String id_empleado, String escolaridad)
+ * 		- public ArrayList<Doctor> recuperaAllempleadosDoc()
+ * 		- public ArrayList<Recepcionista> recuperaAllempleadosRec()
+ */
+
+/******************************************************************/
+
 package negocio1;
 
 import java.util.ArrayList;

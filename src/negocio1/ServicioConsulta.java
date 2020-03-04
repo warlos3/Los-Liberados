@@ -1,3 +1,30 @@
+/******************************************************************/ 
+/* INFORMACION */
+
+/* Programa: Cruz Roja */ 
+
+
+/* Autor:  Todo el equipo de desarrollo */ 
+
+/* Descripción: Este servicio es el encargado de todo lo relacionado con una consulta, 
+ * 				como los servicios que se proporcionan en la empresa, como manejar las citas 
+ * 				que agendan de los pacientes. 
+ * 				El servicio se comunica con el DAO para recuperar información de los servicios, para
+ *				verificar la existencia de tal servicio, recuperar información de las citas de algún paciente.
+ */ 
+
+/******************************************************************/
+
+/* Contenido del Listado:
+ * 		- verificaServicio(String especialidad);
+ * 		- ArrayList<Consulta> recuperaAllCitas();
+ * 		- Consulta recuperaCita(String idCita);
+ * 		- Paciente recuperaPaciente(String idCita);
+ * 		- ArrayList<Consulta> recuperaAllServicios();
+ */
+
+/******************************************************************/
+
 package negocio1;
 
 import java.util.ArrayList;

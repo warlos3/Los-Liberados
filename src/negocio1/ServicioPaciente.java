@@ -1,3 +1,42 @@
+/******************************************************************/ 
+/* INFORMACION */
+
+
+
+/* Programa: Cruz Roja */ 
+
+
+/* Autor: Todo el equipo de desarrollo */ 
+
+/* Descripción: Este servicio es el encargado de todo lo relacionado con el paciente. 
+ * 				Se encarga de comunicarse con el DAOCruzRoja para obtener la información de un paciente 
+ * 				a tráves de la Base de datos. Datos del paciente se refiere a su nombre, su ID de paciente, 
+ * 				teléfono, etc.
+ * 				Por medio de los métodos ocupados en este servicio se puede agregar n nuevo empleado, 
+ * 				modificar algún dato del paciente, eliminarlo, incluso recuperar alguna informacion
+ * 				específica del paciente, así como ver su historial médico, sus citas o la aceptación de
+ * 				algún pago que el paciente haya realizado.
+ */ 
+
+/******************************************************************/
+
+/* Contenido del Listado:
+ * 		- public boolean EliminaPaciente(String ID);
+ * 		- public Pago verificaPago(int idPago)
+ *		- public ArrayList<HistorialMedico> consultaHistorialMedico(String IDPaciente)
+ *		- public Paciente obtenPaciente(int idPago)
+ *		- boolean nuevo_paciente(String nombre,String apellido, String telefono, String direccion, String email, int edad,
+			String fecha_nacimiento, String sexo, String curp, String idpaciente);
+ * 		- public String generaidpac(String nombre, int edad, String sexo, String telefono);
+ * 		- public String recuperaNombre(String idPaciente);
+ * 		- public String recuperaCURP(String idPaciente);
+ * 		- public boolean verificaID(String idPaciente);
+ * 		- public ArrayList<Paciente> recuperaAllPaciente();
+ * 		- public boolean anadeHistorialMedico(String idPaciente, String fecha, String observaciones);
+ */
+
+/******************************************************************/
+
 package negocio1;
 
 import java.util.ArrayList;

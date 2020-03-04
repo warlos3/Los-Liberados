@@ -1,3 +1,24 @@
+/******************************************************************/ 
+
+/* Programa: Cruz Roja */ 
+
+/* Autor: Contreras Vazquez Carlos */ 
+/* Descripción: Esta ventana tiene como funcion mostrar un listado de todos los servicios
+ *              que se imparten en la empresa. Esa es su unica funcionalidad junto con un 
+ *              boton para regresar a la ventana anterior */ 
+
+/******************************************************************/
+
+/* Contenido del Listado:
+ * 		- public ventanaMuestraServicios(ControlMuestraServicios control)
+ * 		- public void actionPerformed(ActionEvent e) 
+ * 		- void abre()
+ * 		- void cierra()
+ */
+
+/******************************************************************/
+
+
 package presentacion;
 
 import java.awt.BorderLayout;
@@ -22,16 +43,13 @@ import negocio.dominio.Consulta;
 
 public class VentanaMuestraServicios extends JFrame implements ActionListener , ItemListener {
 
-	
 private ControlMuestraServicios control=null;
 	
-	JPanel panel1,panel2,panel3,panel4,panel5,panel6,panel7;
-	JLabel label1,label2,label3,label4,label6,label7;
-	JLabel label8,label9,label10,label11,label12,label13,label14;
+	JPanel panel1,panel2,panel3;
+	JLabel titulo,idServicio,servicio,costo;
 	JButton botonRegresa;
-	JTextField text1;
 	ArrayList<Consulta> servicios;
-	String [] id;
+	String [] id; /*Arreglo para acomodar los elemento del servicio respecto a su ID*/
 	
 	public VentanaMuestraServicios(ControlMuestraServicios control) throws HeadlessException {
 		super("Servicios");
@@ -48,42 +66,41 @@ private ControlMuestraServicios control=null;
 		panel3=new JPanel();
 		
 		/*etiquetas de los campos a mostrar*/
-		label1=new JLabel("Servicios");
-		label2=new JLabel("IDServicio");
-		label3=new JLabel("Servicio");
-		label4=new JLabel("Costo");
+		titulo=new JLabel("Servicios");
+		idServicio=new JLabel("IDServicio");
+		servicio=new JLabel("Servicio");
+		costo=new JLabel("Costo");
 
-
+		/*botones que se ocuparán durante la ejecución*/
 		botonRegresa=new JButton("Regresar");
 		botonRegresa.addActionListener(this);
 		
-		panel1.add(label1);
+		panel1.add(titulo);
 		
 		panel2.setLayout(new GridLayout(servicios.size()+1,4));
-		panel2.add(label2);
-		panel2.add(label3);
-		panel2.add(label4);
+		panel2.add(idServicio);
+		panel2.add(servicio);
+		panel2.add(costo);
 		
-		/*Si se encontraron citas entonces se añaden al panel para mostrarlo despues*/
+		/*Si se encontraron servicios entonces se recorre la lista para obtener los datos requeridos */
 		if(servicios.size()!=0) {
-			
-			for(int i=0;i<servicios.size();i++) {
+			for(int i=0;i<servicios.size();i++) { //recorre el arreglo con todos los servicios obtenidos
 				aux+=100;
-				id[i]=servicios.get(i).getIDConsulta();
-				panel2.add(new JLabel("     "+servicios.get(i).getIDServicio()));
-				panel2.add(new JLabel(""+servicios.get(i).getTipoServicio()));
-				panel2.add(new JLabel(""+servicios.get(i).getCosto()));
+				id[i]=servicios.get(i).getIDConsulta(); 
+				panel2.add(new JLabel("     "+servicios.get(i).getIDServicio())); //añade ID de servicio a la ventana
+				panel2.add(new JLabel(""+servicios.get(i).getTipoServicio())); //añade el tipo de servicio a la ventana
+				panel2.add(new JLabel(""+servicios.get(i).getCosto())); //añade el costo de servicio a la ventana
 				}
 		}
 		
 		setSize(500,aux);
 		panel3.add(botonRegresa);
 		
+		/*Se agregan los paneles de manera ordenada a la ventana creada*/
 		add(panel1,BorderLayout.NORTH);
 		add(panel2,BorderLayout.CENTER);
 		add(panel3,BorderLayout.SOUTH);
 		
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
 	@Override
@@ -95,16 +112,19 @@ private ControlMuestraServicios control=null;
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
+		/*Cuando se oprima el boton regresar, la ventana actual se cerrará y se 
+		 * quedará en la ventana anterior abierta*/
 		if(e.getSource()==botonRegresa) {
 			setVisible(false);
 		}
 		
 	}
 	
+	/*Metodo abre se encarga de mostrar la ventana cuando asi se desee*/
 	public void abre() {
 		setVisible(true);
 	}
-	
+	/*Metodo cierra se encarga de cerrar la ventana cuando asi se desee*/
 	public void cierra() {
 		setVisible(false);
 	}
