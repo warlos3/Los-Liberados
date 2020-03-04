@@ -1,15 +1,21 @@
-/* Programa:  ControlGeneraEspacialidad */ 
-/* Autor: Ximena */ 
-/* Descripción: en esta clase se verificar los datos ingresados por el usuario y recuperar datos de un paciente
- * cuando el usuario ingresa el id del paciente deseado para poder realizar otra accion */ 
+/* Programa:  Cruz Roja - ControlGeneraEspacialidad */ 
+/* Autor: Jiménez Linares Suemy Ximena */ 
+/* Descripción: En esta clase, el control se comunica con la VentanaGeneraEspacialidad y con el ServicioPaciente, 
+ * el control tiene metodos que se verifican los datos ingresados por el usuario y recuperar datos de un paciente
+ * cuando el usuario ingresa el id del paciente deseado para poder realizar otra accion 
+ */ 
+
+/****************************************************************************************************************/
 
 /*Contenido del Listado: 
  * inicia()
- * verificaImprime()
- * dameNombrePaciente()
- * dameCURPPaciente()
- * verificaID()
+ * verificaImprime(String idPaciente, String nombre, String curp, String especialidad, String nombreDoc)
+ * dameNombrePaciente(String idPaciente)
+ * dameCURPPaciente(String idPaciente)
+ * verificaID(String idPaciente)
  */
+
+/******************************************************************************************************************/
 
 
 package presentacion;

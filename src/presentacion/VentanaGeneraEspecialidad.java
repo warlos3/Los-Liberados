@@ -1,18 +1,23 @@
-/* Programa: VentanaGeneraEspecialidad */ 
-/* Autor: Ximena */ 
-/* Descripción:  en esta clase se programa el diseño de la interfaz, como darle acciones a los botones, tamaño y posicion en la que 
- * cada parte de la interfaz debe de estar
- *  */
+/* Programa: Cruz Roja - VentanaGeneraEspecialidad */ 
+/* Autor: Jiménez Linares Suemy Ximena */ 
+/* Descripción:  Esta clase se programa el diseño de la interfaz, como darle acciones a los botones, tamaño y posicion en la que 
+ * cada parte de la interfaz debe de estar, ademas de que esta clase VentanaGeneraEspecialidad muestra un Pase de especialidad con 
+ * los datos del paciente una vez que el usuario inserto correctamente el ID del paciente junto con un boton que permite imprimir el 
+ * documento
+ */
+
+/***********************************************************************************************************************************/
 
 /* Contenido del Listado: 
- * VentanaGeneraEspecialidad()
- * paint()
- * actionPerformed()
- * muestraMensaje()
+ * VentanaGeneraEspecialidad(ControlGeneraEspecialidad control)
+ * paint(Graphics g)
+ * actionPerformed(ActionEvent e)
+ * muestraMensaje(String mensaje)
  * abre()
  * cierra()
  */
 
+/**********************************************************************************************************************************/
 
 package presentacion;
 import java.awt.BorderLayout;

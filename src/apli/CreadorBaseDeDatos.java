@@ -42,7 +42,7 @@ public class CreadorBaseDeDatos {
 			
 			
 			
-			
+			/*
 			statement.execute("DROP TABLE consulta");
 			statement.execute("DROP TABLE Fichamedica");
 			statement.execute("DROP TABLE Pago");
@@ -52,7 +52,7 @@ public class CreadorBaseDeDatos {
 			statement.execute("DROP TABLE Recepcionista");
 			statement.execute("DROP TABLE Login");
 			statement.execute("DROP TABLE historialMedico");
-			
+			*/
 			
 			/*
 			statement.execute("INSERT INTO Login values('456','456','Recepcionista')");
