@@ -1,5 +1,8 @@
 package test;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -7,6 +10,7 @@ import java.util.Map;
 
 
 import datos.DAOCruzRoja;
+import datos.ManejadorBaseDatos;
 import negocio.dominio.Consulta;
 import negocio.dominio.Doctor;
 import negocio.dominio.Empleado;
@@ -131,9 +135,32 @@ public class DAOCRUZROJAMock implements DAOCruzRoja {
 	@Override
 	public Paciente recuperaPaciente(String idPaciente) {
 		// TODO Auto-generated method stub
-		return null;
+		try {
+			System.out.println("Llegue al DAO " + idPaciente);
+			Paciente paciente = null;
+			//Se conecta a la base de datos
+			Statement statement = ManejadorBaseDatos.getConnection().createStatement();
+			//Recupera la informacion del paciente que se encuentra en la base de datos
+			ResultSet rs = statement.executeQuery("SELECT idPaciente, edad, nombre, apellido, sexo FROM Paciente where idPaciente='"+idPaciente+"'");
+			
+			//Va almacenando la informacion obtenida de la base de datos
+			if(rs.next()) {
+				paciente = new Paciente();
+				paciente.setId_paciente(rs.getString("idPaciente"));
+				paciente.setEdad(rs.getInt("edad"));
+				paciente.setNombre(rs.getString("nombre"));
+				paciente.setApellido(rs.getString("apellido"));
+				paciente.setSexo(rs.getString("sexo"));
+			}
+			
+			return paciente;
+		}
+		catch(SQLException e){
+			e.printStackTrace();
+			return null;
+		}
 	}
-
+	
 	@Override
 	public Pago recuperaPago(int Pago) {
 		// TODO Auto-generated method stub
