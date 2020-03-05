@@ -1,3 +1,25 @@
+/******************************************************************/ 
+/* INFORMACION */
+
+
+
+/* Programa: Cruz Roja */ 
+
+
+/* Autor:  Todo el equipo de desarrollo */ 
+
+/* Descripción: Este servicio es el encargado de todo lo relacionado con los reportes de la empresa, 
+ * 				un reporte mensual acerca de las consultas que se han hecho a lo largo de cierto periodo.
+ */ 
+
+/******************************************************************/
+
+/* Contenido del Listado:
+ * 		- public ArrayList<Reporte> consultaServicio(String periodo);
+ */
+
+/******************************************************************/
+
 package negocio1;
 
 import java.util.ArrayList;

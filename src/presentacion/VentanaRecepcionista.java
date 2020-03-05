@@ -37,7 +37,7 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 	JTextField text1,text2,text3,text4,text5,text6,text7,text8;
 	JCheckBox check1,check2;
 	JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9,boton10,boton11,boton12,boton13,boton14;
-	JButton botonElimPaciente;
+	JButton botonElimPaciente, botonServicios;
 	Date fecha=new Date();
 	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 	
@@ -70,18 +70,19 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		
 		boton10=new JButton(" Pacientes");
 		boton11=new JButton(" Empleados");
-		boton12=new JButton(" Finanzas");
+		boton12=new JButton(" Otros ");
 		
-		boton1=new JButton("Nuevo Paciente");		
-		boton3=new JButton("      Citas      ");
-		boton4=new JButton("  Verifica Pago  ");
-		botonElimPaciente=new JButton("Elimina Paciente");
+		boton1=new JButton("    Nuevo Paciente    ");		
+		boton3=new JButton("              Citas              ");
+		boton4=new JButton("       Verifica Pago      ");
+		botonElimPaciente=new JButton("    Elimina Paciente    ");
 		
 		boton6=new JButton("  Agrega Empleado  ");
 		boton7=new JButton("  Elimina Empleado  ");
 		boton8=new JButton("          Horarios            ");
 		
 		boton9=new JButton("Reporte Financiero");
+		botonServicios=new JButton("         Servicios         ");
 		boton13=new JButton("Regresar");
 		boton14=new JButton("Cerrar Sesion");
 		
@@ -98,7 +99,7 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		boton13.addActionListener(this);
 		boton14.addActionListener(this);
 		botonElimPaciente.addActionListener(this);
-
+		botonServicios.addActionListener(this);
 		panel1.setLayout(new GridLayout(1,3));
 		panel1.add(label1);
 		panel1.add(aux);
@@ -121,6 +122,7 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 		//panel de finansas
 		panel5.setLayout(new FlowLayout());
 		panel5.add(boton9);
+		panel5.add(botonServicios);
 		
 		//panel de opciondes de la recepcionista
 		panel2.setLayout(new GridLayout(3,1));
@@ -234,8 +236,14 @@ public class VentanaRecepcionista extends JFrame implements ActionListener{
 			setVisible(false);
 			control.inicia();
 		}
+		
+		//boton para mostrar los servicios que se imparten
+		if(e.getSource()==botonServicios) {
+			control.muestraServicios();
+		}
 
 	}
+	
 	
 	public void abre() {
 		setVisible(true);
