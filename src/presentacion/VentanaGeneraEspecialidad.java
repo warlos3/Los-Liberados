@@ -1,3 +1,24 @@
+/* Programa: Cruz Roja - VentanaGeneraEspecialidad */ 
+/* Autor: Jiménez Linares Suemy Ximena */ 
+/* Descripción:  Esta clase se programa el diseño de la interfaz, como darle acciones a los botones, tamaño y posicion en la que 
+ * cada parte de la interfaz debe de estar, ademas de que esta clase VentanaGeneraEspecialidad muestra un Pase de especialidad con 
+ * los datos del paciente una vez que el usuario inserto correctamente el ID del paciente junto con un boton que permite imprimir el 
+ * documento
+ */
+
+/***********************************************************************************************************************************/
+
+/* Contenido del Listado: 
+ * VentanaGeneraEspecialidad(ControlGeneraEspecialidad control)
+ * paint(Graphics g)
+ * actionPerformed(ActionEvent e)
+ * muestraMensaje(String mensaje)
+ * abre()
+ * cierra()
+ */
+
+/**********************************************************************************************************************************/
+
 package presentacion;
 import java.awt.BorderLayout;
 
@@ -10,6 +31,7 @@ import javax.swing.*;
 
 public class VentanaGeneraEspecialidad extends JFrame implements ActionListener{
 	
+	//se declaran las variables
 	private JLabel label1, label2, label3, label4, label5, label6, label7;
 	private JTextField text1,text2,text3,text4,text5;
 	private JButton boton1, boton2, boton3;
@@ -17,6 +39,7 @@ public class VentanaGeneraEspecialidad extends JFrame implements ActionListener{
 	
 	private ControlGeneraEspecialidad control=null;
 	
+	//metodo que se encarga del diseño de la interfaz Genera Especialidad
 	public VentanaGeneraEspecialidad(ControlGeneraEspecialidad control) throws HeadlessException {
 		super("Generacion de Pase de Especialidad");
 		this.control=control;
@@ -109,7 +132,7 @@ public class VentanaGeneraEspecialidad extends JFrame implements ActionListener{
     }
        
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) { //metodo que en el que se le dan acciones a los botones
 		if(e.getSource() == boton1) {
 			setVisible(false);
 		}
@@ -137,7 +160,7 @@ public class VentanaGeneraEspecialidad extends JFrame implements ActionListener{
 		}
 	}
 	
-	public void muestraMensaje(String mensaje){ //mensaje de alerta
+	public void muestraMensaje(String mensaje){ //metodo que muestra mensaje de alerta
 		JOptionPane.showMessageDialog(this, mensaje);
 	}
 
