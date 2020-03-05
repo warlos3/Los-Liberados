@@ -175,7 +175,7 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 				info.setIDConsulta(rs.getString("idconsulta"));
 				info.setHora(rs.getString("hora"));
 				info.setFecha(rs.getString("Fecha"));
-				info.setTipo_de_servicio(rs.getString("tipodeconsulta"));
+				info.setTipoServicio(rs.getString("tipodeconsulta"));
 				cita.add(info);
 			}
 			
@@ -206,6 +206,32 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	@Override
+	public ArrayList<Consulta> recuperaAllServicios() {
+		ArrayList <Consulta> servicios = new ArrayList<Consulta>(); //arreglo de tipo consulta
+		Consulta info=null;
+		
+		try{
+			Statement statement = ManejadorBaseDatos.getConnection().createStatement();
+			//Recibe resultados
+			ResultSet rs = statement.executeQuery("SELECT idservicio,tipo,cantidad,costo FROM Servicio");
+			
+			/*recupera los datos solicitados y son guardados en 'info' */
+			while(rs.next()) {
+				info=new Consulta();
+				info.setIDServicio(rs.getString("idservicio"));
+				info.setTipoServicio(rs.getString("tipo"));
+				info.setCantidad(rs.getString("cantidad"));
+				info.setCosto(rs.getString("costo"));
+				servicios.add(info);
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return servicios; //regresa el arreglo con todos los datos recabados
 	}
 	
 	@Override

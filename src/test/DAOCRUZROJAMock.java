@@ -168,4 +168,10 @@ public class DAOCRUZROJAMock implements DAOCruzRoja {
 		return false;
 	}
 
+	@Override
+	public ArrayList<Consulta> recuperaAllServicios() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

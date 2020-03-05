@@ -75,7 +75,7 @@ public class VentanaCitas extends JFrame implements ActionListener , ItemListene
 				panel2.add(new JLabel(""+citas.get(i).getIDConsulta()));
 				panel2.add(new JLabel(""+citas.get(i).getFecha()));
 				panel2.add(new JLabel(""+citas.get(i).getHora()));
-				panel2.add(new JLabel(""+citas.get(i).getTipo_de_servicio()));
+				panel2.add(new JLabel(""+citas.get(i).getTipoServicio()));
 				aux2++;
 				}
 		}
