@@ -60,11 +60,12 @@ public class CreadorBaseDeDatos {
 			statement.execute("INSERT INTO doctor values ('asdsa','luis','feranndo','2019-05-30',23,'hola','qw','er','M','dsd','asdasd','marutio')");
 			statement.execute("INSERT INTO doctor values ('12345','fernando','feranndo','2019-05-30',23,'hola','qw','er','M','dsd','asdasd','marutio')");
 			statement.execute("INSERT INTO Recepcionista values ('987','raul','feranndo','2019-05-30',23,'hola','qw','er','M','dsd','asdasd')");
-			statement.execute("INSERT INTO Servicio values (01,'Consulta General',60)");
-			statement.execute("INSERT INTO Servicio values (02,'Inyeccion',30)");
-			statement.execute("INSERT INTO Servicio values (03,'Ortopedista',1)");
-			statement.execute("INSERT INTO Servicio values (04,'Podologia',1)");
-			statement.execute("INSERT INTO Servicio values (05,'Cardologia',1)");
+			statement.execute("INSERT INTO Servicio values (01,'Consulta General',60,'$150.00')");
+			statement.execute("INSERT INTO Servicio values (02,'Inyeccion',30,'$25.00')");
+			statement.execute("INSERT INTO Servicio values (03,'Ortopedista',1,'$125.00')");
+			statement.execute("INSERT INTO Servicio values (04,'Podologia',1,'$130.00')");
+			statement.execute("INSERT INTO Servicio values (05,'Cardiologia',1,'$100.00')");
+			statement.execute("INSERT INTO Servicio values (06,'Nebulizacion',1,'$100.00')");
 			statement.execute("INSERT INTO Paciente values ('a24F1','Brianda','Garcia','5539145264','bosques de argentina','brianda3195garcia@gmail.com','GARF010195','F','24','1995-01-03','a1b2c3')");			
 			statement.execute("INSERT INTO Fichamedica values ('3/Noviembre/2019',10,'a24F1',01)");
 			statement.execute("INSERT INTO Pago  values (01,01,'a24F1','3/Noviembre/2019')");
@@ -78,6 +79,7 @@ public class CreadorBaseDeDatos {
 					"idservicio INT NOT NULL,"+
 					"tipo VARCHAR(45) NOT NULL,"+ 
 					"cantidad INT NOT NULL,"+
+					"costo VARCHAR(45) NOT NULL,"+
 					"PRIMARY KEY (idservicio))");
 			statement.execute("CREATE TABLE Recepcionista("+
 					"idrecep VARCHAR(45) NOT NULL,"+
