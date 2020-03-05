@@ -54,6 +54,14 @@ public class ServicioUsuarioimp implements ServicioUsuario {
 		// TODO Auto-generated method stub
 	}
 	
-	
+	/***************************************************************
+	 * Esta funcion recibe el id del usuario y la nueva contraseña que 
+	 * eligio el usuario que se encuentra registrado en la base de datos
+	 * Si la contraseña se cambio con exito regresa True, si no se pudo
+	 * realizar los cambios regresa False
+	 **************************************************************/
+	public boolean cambiarContra(String idUsuario, String contra) {
+		return dao.updateContra(idUsuario, contra);
+	}
 
 }//fin de la clase ServicioUsuarioimp
