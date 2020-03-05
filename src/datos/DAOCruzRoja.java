@@ -78,5 +78,6 @@ public interface DAOCruzRoja {
 	
 	public ArrayList<Consulta> recuperaAllServicios();
 	
+	public boolean updateContra(String idUsuario, String contra);
 
 }

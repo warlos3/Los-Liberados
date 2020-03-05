@@ -9,13 +9,14 @@ public class ControlPrincipal {
 	private VentanaPrincipal ventana;
 	private VentanaDoctor ventanaDoc;
 	private VentanaRecepcionista ventanaRec;
+	private ventanaCambioContra ventanaCambioContra;
 	
 	private  ControlNuevoPpaciente control_nuevo_paciente;
 	private ControlEliminaEmpleado control_elimina_emp;
 	private Controlagregaempleado control_agrega_empleado;
 	private ControlBusquedaPaciente controlBusquedaPaciente;
 	private ControlReporteFinanciero controlReporteFinanciero;
-	private ControlUsuario control_Usuario;
+	private ControlUsuario controlUsuario;
 	private ControlGeneraEspecialidad controlGeneraEspecialidad;
 	private ControlVerificacionPago controlVerificaPago;
 	private ControlFichaMedica controlFichaMedica;
@@ -27,7 +28,7 @@ public class ControlPrincipal {
 	
 	public ControlPrincipal(ControlNuevoPpaciente control_nuevo_paciente,Controlagregaempleado control_agrega_empleado,
 			ControlEliminaEmpleado control_elimina_emp,ControlBusquedaPaciente controlBusquedaPaciente,
-			ControlReporteFinanciero controlReporteFinanciero, ControlUsuario control_Usuario, ControlGeneraEspecialidad controlGeneraEspecialidad,
+			ControlReporteFinanciero controlReporteFinanciero, ControlUsuario controlUsuario, ControlGeneraEspecialidad controlGeneraEspecialidad,
 			ControlVerificacionPago controlVerificaPago, ControlFichaMedica controlFichaMedica, ControlExamenMedico controlExamenMedico,
 			ControlEliminaPaciente controlEliminaPaciente, ControlCitas controlCitas, ControlBuquedaHorarios controlBusquedaHorarios,
 			ControlMuestraServicios controlMuestraServicios) {
@@ -38,7 +39,7 @@ public class ControlPrincipal {
 		this.controlBusquedaPaciente=controlBusquedaPaciente;
 		this.controlGeneraEspecialidad=controlGeneraEspecialidad;
 		this.controlReporteFinanciero=controlReporteFinanciero;
-		this.control_Usuario=control_Usuario;
+		this.controlUsuario=controlUsuario;
 		this.controlVerificaPago=controlVerificaPago;
 		this.controlFichaMedica=controlFichaMedica;
 		this.controlExamenMedico=controlExamenMedico;
@@ -60,6 +61,21 @@ public class ControlPrincipal {
 		ventana.abre();
 	}
 	
+	public void muestraCambiarContra() {
+		ventanaCambioContra = new ventanaCambioContra(this);
+		ventanaCambioContra.abre();
+	}
+	
+	public void cambiarContra(String idUsuario,String contra) {
+		System.out.println("Control " + idUsuario);
+		if(controlUsuario.cambiaContra(idUsuario, contra)) {
+			ventanaCambioContra.exito();
+		}
+		else {
+			ventanaCambioContra.error();
+		}
+	}	
+	
 	/*
 	 * Inicia la historia de usuario de nuevo paciente
 	 */
@@ -74,7 +90,7 @@ public class ControlPrincipal {
 	}
 	
 	public String login(String nombre, String contra) {
-		return control_Usuario.verificaUsuario(nombre, contra);
+		return controlUsuario.verificaUsuario(nombre, contra);
 	}
 	
 	public  void nuevo_paciente() {
@@ -107,7 +123,8 @@ public class ControlPrincipal {
 	
 	public void termina() {
 		ManejadorBaseDatos.shutdown();
-		
+		ventana.setVisible(false);
+		System.exit(0);
 	}
 
 	public void generaPase() {

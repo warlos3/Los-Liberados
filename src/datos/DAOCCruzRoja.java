@@ -611,6 +611,27 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 		return null;
 	}
 
-	
+	/***************************************************************
+	 * Esta funcion realiza la actualizacion en la base de datos en la tabla login
+	 * para el cambio de contraseña del usuario, recibe el id del usuario que 
+	 * va a cambiar la contraseña junto con la nueva contraseña.
+	 * Si se cambia con exito, refresa true, si no se puedo porque no se encontro el usuario
+	 * retorna false
+	 **************************************************************/
+	public boolean updateContra(String idUsuario, String contra) {
+		try {
+			// Se conecta a la BD
+			Statement statement = ManejadorBaseDatos.getConnection().createStatement();
+					
+			// Ejecuta la instruccion
+			statement.execute("UPDATE Login SET contrasena = '"+contra+"' WHERE usuario = '"+idUsuario+"'");
+			return true;
+			
+		} catch (SQLException e) {
+			//Cacha excepcion
+			e.printStackTrace();
+			return false;
+		}
+	}
 
 }
